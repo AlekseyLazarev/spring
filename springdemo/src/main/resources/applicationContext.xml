@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- load properties file -->
+    <context:property-placeholder location="classpath:sport.properties"/>
+    <!-- Define your beans here -->
+
+    <!-- define the dependency -->
+    <bean id="myHappyFortuneService"
+          class="com.luv2code.springdemoone.fortunes.HappyFortuneService">
+    </bean>
+
+    <bean id="myFortuneService"
+          class="com.luv2code.springdemoone.fortunes.RandomFortuneService">
+        <constructor-arg value="Today is your lucky day.,
+        Never give up.,
+        Beware of the wolf.,
+        An apple a day keeps the doctor away.,
+        A bird in hand is better than two in a bush.">
+        </constructor-arg>
+    </bean>
+
+    <bean id="myTrackCoach"
+          class="com.luv2code.springdemoone.coaches.TrackCoach">
+
+        <!-- set up constructor injection -->
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myCoach"
+          class="com.luv2code.springdemoone.coaches.GameCoach">
+
+        <!-- set up constructor injection -->
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myCricketCoach"
+          class="com.luv2code.springdemoone.coaches.CricketCoach">
+
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService"/>
+
+        <!-- inject literal values -->
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
+
+    </bean>
+
+</beans>
