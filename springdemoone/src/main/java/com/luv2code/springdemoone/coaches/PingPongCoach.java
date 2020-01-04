@@ -1,8 +1,6 @@
 package com.luv2code.springdemoone.coaches;
 
 import com.luv2code.springdemoone.interfaces.Coach;
-import com.luv2code.springdemoone.interfaces.FortuneService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**

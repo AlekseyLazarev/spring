@@ -11,7 +11,7 @@ import java.util.Random;
  * @since 16.12.2019
  */
 public class RandomFortuneService implements FortuneService {
-    private String[] fortunes;
+    private final String[] fortunes;
 
     public RandomFortuneService(String[] fortunes) {
         this.fortunes = fortunes;

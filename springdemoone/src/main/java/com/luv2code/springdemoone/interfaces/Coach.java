@@ -8,5 +8,6 @@ package com.luv2code.springdemoone.interfaces;
  */
 public interface Coach {
     String getDailyWorkOut();
+
     String getDailyFortune();
 }

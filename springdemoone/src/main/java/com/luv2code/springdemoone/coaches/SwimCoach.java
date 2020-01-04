@@ -15,23 +15,31 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SwimCoach implements Coach {
-    @Autowired
-    @Qualifier("fileFortuneService")
-    private FortuneService fortuneService;
-
+    private final FortuneService fortuneService;
     @Value("${foo.email}")
     private String email;
-
     @Value("${foo.team}")
     private String team;
 
+    public SwimCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
     @Override
     public String getDailyWorkOut() {
-        return "Swim swim swim";
+        return "Swim 1000 meters as a warm up.";
     }
 
     @Override
     public String getDailyFortune() {
         return this.fortuneService.getFortune();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTeam() {
+        return team;
     }
 }

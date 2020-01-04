@@ -1,7 +1,7 @@
 package com.luv2code.springdemoone;
 
 import com.luv2code.springdemoone.interfaces.Coach;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Class  решение задачи части
@@ -9,10 +9,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author Aleksey Lazarev
  * @since 03.01.2020
  */
-public class AnnotationDemoApp {
+public class PracticeJavaConfigDemoApp {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Coach theCoach = context.getBean("swimCoach", Coach.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(PracticeConfig.class);
+        Coach theCoach = context.getBean("boxCoach", Coach.class);
         System.out.println(theCoach.getDailyWorkOut());
         System.out.println(theCoach.getDailyFortune());
         context.close();

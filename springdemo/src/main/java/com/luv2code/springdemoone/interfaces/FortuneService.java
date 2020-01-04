@@ -7,5 +7,5 @@ package com.luv2code.springdemoone.interfaces;
  * @since 16.12.2019
  */
 public interface FortuneService {
-    public String getFortune();
+    String getFortune();
 }

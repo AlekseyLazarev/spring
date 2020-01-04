@@ -25,7 +25,7 @@ public class FileFortuneService implements FortuneService {
     @Value("${filefortune}")
     private String filePath;
     private List<String> fortunes;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     @PostConstruct
     private void loadTheFortunesFile() {

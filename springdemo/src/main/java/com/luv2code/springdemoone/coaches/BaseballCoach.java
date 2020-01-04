@@ -11,7 +11,7 @@ import com.luv2code.springdemoone.interfaces.FortuneService;
  */
 public class BaseballCoach implements Coach {
 
-    private FortuneService fortuneService;
+    private final FortuneService fortuneService;
 
     public BaseballCoach(FortuneService theFortuneService) {
         fortuneService = theFortuneService;
