@@ -11,6 +11,7 @@
     <modules>
         <module>springdemo</module>
         <module>springdemoone</module>
+        <module>springmvcdemo</module>
     </modules>
 
     <properties>
@@ -36,7 +37,6 @@
             <artifactId>checkstyle</artifactId>
             <version>8.28</version>
         </dependency>
-
     </dependencies>
 
 </project>
