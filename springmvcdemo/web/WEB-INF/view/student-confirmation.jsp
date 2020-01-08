@@ -5,6 +5,7 @@
   Time: 20:28
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,8 +20,9 @@ Favorite language: ${student.favoriteLanguage}
 <br><br>
 Operating Systems:
 <ul>
-    <forEach var="temp" items="${student.operatingSystems}"
-    <li>${temp}</li>
+    <c:forEach var="temp" items="${student.operatingSystems}">
+        <li>${temp}</li>
+    </c:forEach>
 </ul>
 </body>
 </html>

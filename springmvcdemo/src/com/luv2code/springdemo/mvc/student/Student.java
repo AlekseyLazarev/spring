@@ -1,6 +1,7 @@
-package com.luv2code.springdemo.mvc;
+package com.luv2code.springdemo.mvc.student;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 
 /**
  * Class Student
@@ -17,6 +18,7 @@ public class Student {
     private String[] operatingSystems;
     private LinkedHashMap<String, String> countryOptions;
     private LinkedHashMap<String, String> languageOptions;
+    private LinkedHashSet<String> operatingSystemsOptions;
 
     public Student() {
         this.countryOptions = new LinkedHashMap<>();
@@ -31,6 +33,11 @@ public class Student {
         this.languageOptions.put("C#", "C#");
         this.languageOptions.put("PHP", "PHP");
         this.languageOptions.put("Ruby", "Ruby");
+
+        this.operatingSystemsOptions = new LinkedHashSet<>();
+        this.operatingSystemsOptions.add("Linux");
+        this.operatingSystemsOptions.add("Mac OS");
+        this.operatingSystemsOptions.add("Windows");
     }
 
     public String getFirstName() {
@@ -79,5 +86,9 @@ public class Student {
 
     public void setOperatingSystems(String[] operatingSystems) {
         this.operatingSystems = operatingSystems;
+    }
+
+    public LinkedHashSet<String> getOperatingSystemsOptions() {
+        return operatingSystemsOptions;
     }
 }
