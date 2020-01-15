@@ -12,9 +12,8 @@ import javax.validation.constraints.Size;
  */
 public class Customer {
     private String firstName;
-
-    @NotNull()
-    @Size(min = 1, message = "is required")
+    @NotNull
+    @Size(min = 10, message = "is required")
     private String lastName;
 
     public String getFirstName() {
