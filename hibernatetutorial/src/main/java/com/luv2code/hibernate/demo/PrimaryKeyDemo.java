@@ -5,6 +5,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.text.ParseException;
+
 /**
  * Class PrimaryKeyDemo
  * <p>
@@ -14,19 +16,21 @@ import org.hibernate.cfg.Configuration;
  */
 public class PrimaryKeyDemo {
     public static void main(String[] args) {
-        try(SessionFactory factory = new Configuration()
+        try (SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student.class)
-                .buildSessionFactory()){
+                .buildSessionFactory()) {
             Session session = factory.getCurrentSession();
             System.out.println("Creating 3 student object . . .");
             session.beginTransaction();
             System.out.println("Saving the students . . .");
-            session.save(new Student("John", "Doe", "john@luv2code.com"));
-            session.save(new Student("Mary", "Public", "mary@luv2code.com"));
-            session.save(new Student("Bonita", "Applebum", "bonita@luv2code.com"));
+            session.save(new Student("John", "Doe", "john@luv2code.com", DateUtils.parseDate("03/12/1998")));
+            session.save(new Student("Mary", "Public", "mary@luv2code.com", DateUtils.parseDate("01/12/1998")));
+            session.save(new Student("Bonita", "Applebum", "bonita@luv2code.com", DateUtils.parseDate("02/12/1998")));
             session.getTransaction().commit();
             System.out.println("Done !");
+        } catch (ParseException pe) {
+            pe.printStackTrace();
         }
     }
 }

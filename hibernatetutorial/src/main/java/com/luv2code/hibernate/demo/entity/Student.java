@@ -1,6 +1,9 @@
 package com.luv2code.hibernate.demo.entity;
 
+import com.luv2code.hibernate.demo.DateUtils;
+
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Class Student
@@ -20,15 +23,19 @@ public class Student {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+    @Column(name = "birth_date")
+    @Temporal(TemporalType.DATE)
+    private Date birthDate;
     @Column(name = "email")
     private String email;
 
     public Student() {
     }
 
-    public Student(String firstName, String lastName, String email) {
+    public Student(String firstName, String lastName, String email, Date birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.birthDate = birthDate;
         this.email = email;
     }
 
@@ -56,6 +63,14 @@ public class Student {
         this.lastName = lastName;
     }
 
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -70,6 +85,7 @@ public class Student {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", birthDate='" + DateUtils.formatDate(birthDate) + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
