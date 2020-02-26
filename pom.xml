@@ -20,6 +20,7 @@
         <module>hb-04-one-to-many-uni</module>
         <module>hb-05-many-to-many</module>
         <module>web-costumer-tracker</module>
+        <module>spring-demo-aop</module>
     </modules>
 
     <properties>
@@ -171,6 +172,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
             <version>5.2.3.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.5</version>
         </dependency>
     </dependencies>
 
