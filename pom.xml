@@ -21,6 +21,8 @@
         <module>hb-05-many-to-many</module>
         <module>web-costumer-tracker</module>
         <module>spring-demo-aop</module>
+        <module>spring-demo-aop-pointcut-declarations</module>
+        <module>spring-demo-aop-pointcut-declarations-combo</module>
     </modules>
 
     <properties>
