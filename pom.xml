@@ -23,6 +23,9 @@
         <module>spring-demo-aop</module>
         <module>spring-demo-aop-pointcut-declarations</module>
         <module>spring-demo-aop-pointcut-declarations-combo</module>
+        <module>spring-demo-aop-pointcut-order-aspects</module>
+        <module>spring-demo-aop-read-joinpoint</module>
+        <module>spring-demo-aop-z-after-returning</module>
     </modules>
 
     <properties>
