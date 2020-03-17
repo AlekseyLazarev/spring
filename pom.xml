@@ -26,6 +26,11 @@
         <module>spring-demo-aop-pointcut-order-aspects</module>
         <module>spring-demo-aop-read-joinpoint</module>
         <module>spring-demo-aop-z-after-returning</module>
+        <module>spring-demo-aop-z-after-throwing</module>
+        <module>spring-demo-aop-zz-after-finally</module>
+        <module>spring-demo-aop-zz-around</module>
+        <module>spring-demo-aop-zz-around-with-logger</module>
+        <module>spring-demo-aop-zzz-around-handle-exception</module>
     </modules>
 
     <properties>
