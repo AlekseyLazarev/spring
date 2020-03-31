@@ -31,6 +31,7 @@
         <module>spring-demo-aop-zz-around</module>
         <module>spring-demo-aop-zz-around-with-logger</module>
         <module>spring-demo-aop-zzz-around-handle-exception</module>
+        <module>web-customer-tracker-aop</module>
     </modules>
 
     <properties>
